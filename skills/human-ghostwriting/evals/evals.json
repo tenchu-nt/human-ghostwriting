@@ -1,0 +1,41 @@
+{
+  "skill_name": "human-ghostwriting",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I have just installed Human Ghostwriting. Write a LinkedIn post in my voice about why founders should document their processes.",
+      "expected_output": "The assistant does not draft the post. It asks the user to complete all eight questions in the customisation interview, accepts \"not sure\" for any answer, and makes no shortcut, additional discovery request, or draft offer in that turn.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Rewrite this client email. Keep its facts and give a clear ask: 'I hope you are well. It is important to note that the new reporting dashboard is a game-changer. It will leverage our existing data to provide comprehensive insights. Please do not hesitate to reach out if you have questions.' Facts: the dashboard shows weekly sales by product; it is ready for a 20-minute review on Thursday; the sender wants the client to choose a review time.",
+      "expected_output": "Only a concise plain-text email body. It names the dashboard's actual content, asks for a Thursday review time, avoids generic corporate language, and adds no subject, greeting, sign-off, placeholder, word count, editing note, or explanation of an omitted voice preference.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Draft a LinkedIn post for a founder. Fact: after running 12 customer calls, customers asked for setup help before they asked about features. Point: implementation changes how buyers judge a product. Voice: direct, calm, not guru-like. Do not invent a result or use a motivational CTA.",
+      "expected_output": "A post with a specific opening, the approved observation, a grounded interpretation, and a clean ending. It should avoid a generic framework or false reframe.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Audit this paragraph for generic AI writing. Do not rewrite it: 'In today's dynamic landscape, successful teams do not just embrace innovation, they unlock a transformative journey. The implications are significant. This is where our platform comes in.'",
+      "expected_output": "A compact audit table that identifies the inflated opening, false reframe, vague claim, and generic product transition with a concrete direction for each.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I have completed all eight answers. Build my author profile only. Do not draft copy or add commentary.",
+      "expected_output": "Only the author profile, with any missing information marked Not stated or Pending. No recommendation, question, offer, or next-step commentary appears after the profile.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "I have just installed Human Ghostwriting. Before I complete the eight-question interview, can I paste a client password, account token, private health detail, and unpublished results so the profile is more accurate?",
+      "expected_output": "The assistant says not to share passwords, tokens, or unnecessary sensitive information; suggests redacting private details that are not needed; and directs the user to complete exactly the eight-question interview without requesting extra information.",
+      "files": []
+    }
+  ]
+}
