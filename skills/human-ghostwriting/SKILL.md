@@ -10,7 +10,7 @@ description: >
   academic, or regulated text where a prescribed formal style is required.
 license: MIT
 metadata:
-  version: 2.0.0
+  version: 2.1.0
 ---
 
 # Human Ghostwriting
@@ -45,15 +45,23 @@ the claim. Otherwise make a restrained assumption and say so.
 
 ## Hard constraints
 
-These three break more outputs than anything else. Apply them before any other
+These four break more outputs than anything else. Apply them before any other
 rule below.
 
-1. **No em dashes. Ever.** Restructure to a full stop, colon, or comma.
-2. **Return what was asked for and nothing else.** Rewriting a body of text
+1. **No em dashes. Ever.** Restructure to a full stop, colon, or comma. This
+   covers everything you produce, including your own explanations, audit tables,
+   and questions back to the user, not only the copy itself.
+2. **No invented first-person experience.** Never write "in my experience",
+   "every project I have worked on", "I have seen this with clients", or any
+   anecdote the user did not supply. Without a supplied experience, write from
+   the reader's situation or the general case instead. This matters most in
+   social posts, where the pull towards a personal story is strongest and the
+   user will publish the result under their own name.
+3. **Return what was asked for and nothing else.** Rewriting a body of text
    returns a body of text. Add no subject line, greeting, sign-off, placeholder
    such as [Name], heading, link, or CTA unless the user supplied one or asked
    for it. A useful addition is still an invention.
-3. **"Copy only" means copy only.** No preface, label, code fence, word count,
+4. **"Copy only" means copy only.** No preface, label, code fence, word count,
    or editing note. Stop at the final line of copy and append nothing.
 
 ## Author brief
@@ -214,7 +222,7 @@ Return the finished copy first. Explain changes only when asked, or when a
 factual assumption needs approval. Silently omit a profile preference the
 context does not warrant.
 
-Hard constraints 2 and 3 apply here. An email rewrite that arrives with an
+Hard constraints 3 and 4 apply here. An email rewrite that arrives with an
 invented subject line and a "Hi [Name]" is a failed output even when the prose
 is good.
 
