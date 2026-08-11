@@ -6,21 +6,15 @@ without relying on a brittle blacklist of words.
 
 ## Install
 
-Use the public GitHub source with the open `skills` installer:
+Open Terminal, paste this command, and press Return:
 
 ```bash
-npx skills add tenchu-nt/human-ghostwriting --skill human-ghostwriting -g -y
+npx --yes skills@latest add tenchu-nt/human-ghostwriting --copy -y
 ```
 
-To install for a particular local agent, add its agent name:
-
-```bash
-npx skills add tenchu-nt/human-ghostwriting --skill human-ghostwriting --agent claude-code -g -y
-npx skills add tenchu-nt/human-ghostwriting --skill human-ghostwriting --agent codex -g -y
-```
-
-The installer supports other compatible agents too. See its prompts for the
-available targets.
+That is the only command needed. The repository contains one skill, so the
+installer finds it automatically without requiring the user to choose a skill.
+It detects compatible coding agents such as Claude Code and Codex.
 
 ## Use it immediately; customise only if helpful
 

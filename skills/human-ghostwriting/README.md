@@ -31,24 +31,22 @@ human-ghostwriting/
     └── revision-examples.md
 ```
 
-## Claude Code
+## Install in one command
 
-Copy the `human-ghostwriting` folder into a skills directory that Claude Code
-loads, such as `~/.claude/skills/` for a personal skill or `.claude/skills/`
-inside a repository. Restart or start a new session, then ask for writing,
-rewriting, humanising, or a tone audit. The frontmatter description is designed
-to trigger the skill for those requests.
+Open Terminal, paste this, and press Return:
 
-## Codex
+```bash
+npx --yes skills@latest add tenchu-nt/human-ghostwriting --copy -y
+```
 
-Copy the folder to the skill location your Codex environment exposes, or keep
-it in the repository under `.claude/skills/` when that is part of the agent's
-skill-discovery convention. The agent should read `SKILL.md` and any reference
-file selected in its **Reference routing** section before writing.
+There is only one skill in the repository. The installer detects compatible
+coding agents such as Claude Code and Codex and installs it without requiring
+the user to select a skill. Start a new chat when it finishes and ask for
+writing, rewriting, humanising, or a tone audit.
 
 ## ChatGPT
 
-ChatGPT does not automatically discover local skill folders. Create a custom
+ChatGPT does not install local skills from a terminal command. Create a custom
 GPT or project instruction named "Human Ghostwriting", then paste
 `CHATGPT-INSTRUCTIONS.md` into its instructions and upload the four files in
 `references/` as knowledge, including `customisation-interview.md`. For an
