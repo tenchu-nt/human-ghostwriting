@@ -8,223 +8,232 @@ description: >
   for both a new draft and an audit of existing text, even if the user only
   says "write this better" or "remove the AI slop". Do not use it for legal,
   academic, or regulated text where a prescribed formal style is required.
+license: MIT
 metadata:
-  version: 1.8.0
-  category: writing-and-editing
-  compatibility: Claude Code, Codex, and any agent that can load Markdown files
+  version: 2.0.0
 ---
 
 # Human Ghostwriting
 
 ## Purpose
 
-Write useful text that sounds like a particular person, not like a polished
-average of internet writing. The goal is not deliberate imperfection. It is
-clear, accurate writing with an identifiable point of view, believable detail,
-and a register that fits the sender and the situation.
+Write text that sounds like a particular person, not like a polished average of
+internet writing. The goal is not deliberate imperfection. It is clear, accurate
+writing with a point of view, believable detail, and a register that fits the
+sender.
 
-AI-sounding writing usually fails because it is interchangeable: the same
-sentence could be sent by any company, in any country, about any product. Fix
-the underlying vagueness. Do not merely swap fashionable words for plainer
-ones.
+AI-sounding writing fails because it is interchangeable. The same sentence could
+be sent by any company, in any country, about any product. Fix the underlying
+vagueness rather than swapping fashionable words for plainer ones.
 
-## Optional customisation interview
+## Rule hierarchy
 
-Do not make an interview a gate to writing. Draft from the request, supplied
-facts, and any samples already available. If essential information is missing,
-ask only the one or two questions that materially affect truth, audience, or
-the requested action; otherwise make the best restrained draft you can.
+When rules compete, this order wins:
 
-Offer `references/customisation-interview.md` only when the user wants a
-reusable author profile, steadier voice across multiple pieces, or help
-articulating their preferences. It has eight optional prompts, but the user
-may answer any number of them, say "not sure", or skip it entirely. Never
-delay a requested draft while waiting for the interview.
+1. Truth, intent, and any safety or legal requirement.
+2. The author's voice and their relationship with the reader.
+3. Clarity of the point.
+4. Removal of patterns that make writing generic or machine-made.
 
-When answers are provided, use them to build or update
-`references/author-profile-template.md`. Treat the result as evidence, not a
-complete identity, and do not fill gaps by inventing personality traits. When
-the user asks for the author profile only, return only that profile. Put
-unknowns inside it as "Not stated" or "Pending", rather than appending a
-commentary, recommendation, question, or offer.
+The rules below describe taste. They do not replace judgement. Do not swing so
+hard against AI patterns that the writing turns stilted. Write naturally first,
+then strip the parts that sound machine-made.
 
-## Core rules
+Never invent experiences, outcomes, statistics, client names, quotes, or opinions
+to make a draft sound more personal. Ask for a missing fact when it would change
+the claim. Otherwise make a restrained assumption and say so.
 
-Follow this order when rules compete:
+## Author brief
 
-1. Preserve truth, intent, and any safety or legal requirement.
-2. Match the author's established voice and the relationship with the reader.
-3. Make the point easy to understand.
-4. Remove patterns that make the writing generic or machine-made.
+Never make an interview a condition of writing. Draft from the request, the
+supplied facts, and any samples already available. Ask only for what materially
+affects truth, audience, or the requested action:
 
-Never invent experiences, outcomes, statistics, client names, quotes, or
-opinions to make a draft sound more personal. Ask for missing facts when they
-would materially change the claim. Otherwise make a restrained assumption and
-state it if needed.
+- Who is speaking, and what is their relationship with the reader?
+- What is the one thing the reader should understand, do, or feel?
+- Which facts, examples, and claims are true and available to use?
+- What would this person never say?
+
+**When nothing about the voice is supplied**, which is the common case, write
+plain and unshowy. Do not invent a personality to fill the gap. Mention the
+optional voice profile once, after the copy, and never before it.
+
+**The voice profile** is for someone who wants a steady voice across many
+pieces. Offer `references/customisation-interview.md` only when they ask for
+that. Its eight prompts are optional and can be answered in any number. When
+answers arrive, fill `references/author-profile-template.md` and save the
+completed copy as `author-profile.md` in the folder the user is working in, then
+tell them the full path in one plain sentence. Never write it inside the skill
+folder. If no file can be written, return the profile in the chat instead.
+
+When the user asks for the profile only, return only the profile. Mark unknowns
+as "Not stated" or "Pending" inside it. Add no commentary, recommendation,
+question, or offer after it.
 
 ## Privacy boundary
 
-Treat author briefs, writing samples, client facts, and profile notes as
-confidential. Use the minimum detail needed for the requested draft. Do not
-write them to a file, send them to a service, add them to a reusable skill, or
-include them in an example unless the user explicitly asks. Encourage redacted
-samples where a real client name, private financial figure, personal contact
-detail, health information, credential, or unpublished work is unnecessary.
+Treat author briefs, samples, client facts, and profile notes as confidential.
+Use the minimum detail the draft needs. Do not send them to a service, add them
+to a reusable instruction, or put them in an example unless the user asks.
+Encourage redacted samples when a client name, private figure, contact detail,
+health record, credential, or unpublished work is not needed. This skill cannot
+change how an AI product retains data, so promise no confidentiality beyond the
+user's own account and settings.
 
-This skill cannot change how a chosen AI product retains data. Do not promise
-confidentiality beyond the user's account, plan, and platform settings.
+## Decide the job
 
-## Start with an author brief
+- **Draft:** write a new piece from the supplied facts and brief.
+- **Rewrite:** keep the meaning and level of certainty, improve voice and clarity.
+- **Audit:** name the generic lines and how to fix them. Do not rewrite unless asked.
+- **Adapt:** keep the message, change the register for a new format or reader.
 
-Before substantial ghostwriting, use information in the prompt and any writing
-samples. If it is missing, ask only for what affects the result:
+## Write it
 
-- Who is speaking, and what is their relationship with the reader?
-- What does this person sound like when they are at their best?
-- What is the one thing the reader should understand, do, or feel?
-- Which facts, examples, phrases, and claims are true and available to use?
-- What would this person never say?
-
-For a repeat client or a reusable setup, create or update an author profile
-using `references/author-profile-template.md`. A profile is evidence, not a
-stereotype: record observed choices from real samples and leave unknowns blank.
-
-Do not imitate a living writer from a small sample. Describe transferable
-traits instead: sentence length, directness, formality, humour, preferred
-evidence, and words they avoid. If a user asks for an exact living-author
-imitation, explain that you can write with high-level characteristics instead.
-
-## Writing workflow
-
-### 1. Decide the job
-
-- **Draft:** write a new piece from the supplied facts and author brief.
-- **Rewrite:** retain the source's meaning and level of certainty, then improve
-  its voice and clarity.
-- **Audit:** identify the few specific lines or patterns that feel generic and
-  explain how to fix them. Do not rewrite unless asked.
-- **Adapt:** retain the core message, but change the register for the new
-  format, reader, or channel.
-
-### 2. Find the real point
-
-Write the central point in one plain sentence before drafting. Lead with it,
-or lead with a concrete observation that earns the reader's attention. Cut
-throat-clearing such as "I wanted to share" or "It is important to note".
-
-### 3. Make the draft owned
+Put the central point in one plain sentence before drafting. Lead with it, or
+with a concrete observation that earns attention. Cut throat-clearing such as
+"I wanted to share" or "It is important to note".
 
 Use only details that are true and relevant: a decision, number, date, object,
-constraint, trade-off, observed behaviour, or a consequence. Prefer a clear
-claim over an abstract announcement that the claim matters.
+constraint, trade-off, observed behaviour, or consequence. Prefer a clear claim
+over an announcement that the claim matters.
 
-The portability test: if a sentence could be pasted into another person's
-post, company email, or product page without changing it, it probably needs a
-specific detail, a real opinion, or deletion.
+**The portability test.** If a sentence could be pasted into another person's
+post, company email, or product page unchanged, it needs a specific detail, a
+real opinion, or deletion.
 
-### 4. Shape the rhythm for the channel
+**Use UK English** by default. Switch only when the user asks for US spelling.
 
-Write in complete, natural sentences by default. Vary sentence and paragraph
-length when the thought changes; do not use fragments, lists of three, or
-one-line paragraphs as automatic decoration. Keep the format appropriate:
+| Channel | Shape | Register |
+| --- | --- | --- |
+| Message or DM | Context, point, ask. | Direct, informal, short. |
+| Email | Reason for writing, detail, request or decision. | Clear, organised, lightly polite. |
+| Social post | Specific opening, observation, useful point, clean ending. | Grounded, confident, no theatre. |
+| Sales or web copy | Reader's situation, credible claim, proof, next step. | Belief-led, still specific. |
+| Article or essay | Claim, evidence and reasoning, conclusion that adds something. | Considered, plainspoken. |
+| Reflective piece | The issue, an honest assessment, the lesson or standard. | Internal, unpoetic. |
 
-| Context | Default shape |
-| --- | --- |
-| Message or DM | Context, point, ask or next step. |
-| Email | Reason for writing, necessary detail, clear request or decision. |
-| Social post | Specific opening, observation or experience, useful point, clean ending. |
-| Article or essay | A clear claim, evidence and reasoning, then a conclusion that adds something. |
-| Sales or web copy | Reader's situation, credible claim, proof, practical next step. |
+## Edit in passes
 
-### 5. Edit in passes
+Never run one global find-and-replace. Work in this order:
 
-Do not run a single global find-and-replace. Make these passes in order:
-
-1. **Truth:** remove invented certainty, unearned praise, inflated outcomes,
-   and claims the source does not support.
+1. **Truth:** remove invented certainty, unearned praise, inflated outcomes, and
+   claims the source does not support.
 2. **Ownership:** replace generic claims with supplied facts, choices, or
-   perspective. Delete filler when no real detail exists.
-3. **Voice:** adjust formality, rhythm, vocabulary, humour, and directness to
-   the author profile and situation.
-4. **Slop patterns:** inspect `references/avoid.md` and fix patterns that are
-   actually present. A flagged word is a prompt to review its function, not an
-   automatic error.
-5. **Read aloud:** remove phrases no real person would say in this context;
-   check that every sentence earns its place.
+   perspective. Delete filler where no real detail exists.
+3. **Voice:** adjust formality, rhythm, vocabulary, humour, and directness.
+4. **Slop patterns:** read `references/avoid.md` and fix what is actually
+   present. A flagged word is a prompt to check its function, not an automatic
+   error.
+5. **Read aloud:** cut phrases no real person would say in this context.
 
-## Anti-slop principles
+## Punctuation discipline
 
-- Put the message before the setup.
-- Use a concrete noun and verb where possible. Say who did what.
-- Let facts carry weight. Do not add theatrical emphasis to manufacture it.
-- Use plain words when they are more accurate, not just shorter.
-- Use uncertainty honestly: "I think", "we do not know yet", or a qualified
-  claim is better than false certainty.
-- Make one point well. Do not inflate a short idea into a framework.
-- Keep persuasion tied to evidence, consequences, and a genuine point of view.
-- Let a paragraph end once it has done its job. Do not add a summary sentence
-  merely to sound finished.
+- **No em dashes. Ever.** Restructure to a full stop, colon, or comma. This is
+  absolute, in every output including plain-text messages.
+- **Exclamation marks:** at most one per 1,000 words. Enthusiasm comes from word
+  choice.
+- **Ellipses:** only when genuinely trailing off. At most one per piece. Never
+  as a transition.
+- **Semicolons:** use them. AI underuses them; people who write well do not.
+- **Colons:** what follows must deliver a specific payoff. Cut the version that
+  manufactures suspense, such as "The real issue: nobody owns it".
+- No markdown markers in an email, DM, or other plain-text channel. Asterisks
+  rendering as symbols are an instant tell.
+
+## Structural anti-detection
+
+These are how readers, and detectors, spot generated text even when the
+vocabulary is clean.
+
+- **Vary sentence length.** Never write three consecutive sentences of similar
+  length. A short sentence, then a long one, then a middling one reads human.
+- **Do not default to three.** If three items were chosen because three sounds
+  complete, use two, four, or five. Content that genuinely has three points
+  keeps three.
+- **Break the paragraph template.** AI repeats topic sentence, explanation,
+  example, transition. Start some paragraphs blunt, some mid-thought. Let some
+  run one sentence.
+- **Parataxis is a tool, not a mode.** Three or more short declaratives in a row
+  with no connective is a flag. Connect related thoughts with conjunctions or
+  semicolons.
+- **Write active.** Avoid "is being done", "was found to be", "are considered
+  to be".
+- **Let paragraphs end.** Not every one needs a summary or a bridge.
 
 ## Patterns that need a deliberate reason
 
-These are not banned. They often become tells when used by default.
+Not banned, but they become tells when used by default. Keep one only when it
+communicates something the direct version would lose.
 
-- Symmetrical reframes: "It is not X, it is Y."
-- Staccato stacks: "Short sentence. Another short sentence. One more."
-- Generic three-part lists and "firstly, secondly, thirdly" structures.
-- Rhetorical questions that only introduce the answer.
-- Metaphors for a point that would be clearer stated literally.
-- Dramatic colon reveals, "The truth: ..."
-- Grand closing lines that restate the claim without adding evidence.
+**The reframe family.** Reject, minimise, or question X, then upgrade to Y. It
+fails even when the word "not" never appears:
 
-Keep one only when it communicates something the direct version would lose.
-Correcting a factual misunderstanding is a valid use of contrast. A real
-three-part process can use three parts. Good judgement beats rigid rules.
+- "It is not X. It is Y." / "Not just X, but Y."
+- "Forget X. Focus on Y." / "Less X, more Y." / "Stop doing X. Start doing Y."
+- "X is dead. Y is the future." / "The question is not X, it is Y."
+- "You do not need X. You need Y." / "It was never about X."
+- Softened pivots: "While X may seem", "At first glance X", "On the surface X",
+  "Most people think X", "Conventional wisdom says X".
+- The question version: "Is this a productivity problem? No. It is an attention
+  problem." State "Attention is the constraint."
+- The cross-sentence version: "Most teams think they have a hiring problem. They
+  have a standards problem." State "The standards are unclear."
+
+Fix: delete the rejected half and write the positive claim plainly. The only
+legitimate contrast is correcting a real factual, scope, date, number, or name
+error.
+
+Also review: staccato stacks used for drama, rhetorical questions that only
+introduce their answer, dramatic colon reveals, metaphors for a point that is
+clearer stated literally, and grand closing lines that restate the claim without
+adding evidence.
+
+**Analogy budget.** Default to none. Use one only when the subject is genuinely
+abstract, the comparison is exact, and it is shorter than the literal version.
+At most one per 800 to 1,500 words. Never stack two.
+
+**Endings.** Do not close on a fake-profound kicker or a neat summary. End on
+the clearest concrete sentence already in the draft.
 
 ## Output behaviour
 
-For a drafting or rewrite request, return the finished copy first. Explain
-changes only when the user asks, or when a factual assumption needs approval.
+Return the finished copy first. Explain changes only when asked, or when a
+factual assumption needs approval.
+
 If the user says "only", "just the copy", or equivalent, return only the
-finished copy: no preface, label, code fence, word count, or editing notes.
-Stop immediately after the final line of copy. Do not append a rationale,
-postscript, voice note, disclaimer, or an explanation of a choice you made.
-Silently omit a profile preference when the context does not warrant it.
+finished copy: no preface, label, code fence, word count, or editing note. Stop
+at the final line. Append no rationale, postscript, disclaimer, or explanation
+of a choice. Silently omit a profile preference the context does not warrant.
 
-Preserve the supplied format. Do not add a subject line, greeting, sign-off,
-placeholder, heading, link, CTA, or recipient name unless the user supplied it
-or asked for one. A useful addition is still an invention when it changes the
-message's format or claims.
+Preserve the supplied format. Add no subject line, greeting, sign-off,
+placeholder, heading, link, CTA, or recipient name unless the user supplied one
+or asked. A useful addition is still an invention when it changes the format or
+the claims.
 
-For an audit request, use this compact format:
+For an audit, use this format and do not rewrite the piece:
 
 | Source excerpt | Why it feels generic | Better direction |
 | --- | --- | --- |
 | "..." | One concrete pattern | A short, meaning-preserving fix |
 
-Do not claim to detect which model wrote a passage, estimate an "AI score", or
-promise to evade AI detectors. The goal is better writing, not detector games.
+Never claim to detect which model wrote a passage, estimate an "AI score", or
+promise to evade detectors. The goal is better writing, not detector games.
 
-## Final check
+## Before sending
 
-Before sending, ask:
-
-- Is every factual claim supported by the brief or source text?
-- Does the first useful sentence arrive quickly?
+- Is every claim supported by the brief or the source?
+- Does the first useful sentence arrive immediately?
 - Would this sound normal from this sender to this reader?
-- Is any line generic enough to belong to anyone? Make it owned or cut it.
-- Did I add fake stakes, a borrowed opinion, or a motivational ending?
-- Are the flagged words or structures doing useful work here, or are they
-  decorative?
-- Does the format fit the channel, including plain text when the user needs an
-  email or message?
+- Could any line belong to anyone? Make it owned or cut it.
+- Any em dash? Any invented detail, borrowed opinion, or motivational ending?
+- Any reframe, three-item default, or three same-length sentences in a row?
+- Does the format fit the channel, including plain text where it is needed?
 
 ## Reference routing
 
-- Read `references/author-profile-template.md` when the author needs a
-  repeatable voice profile or after they complete the customisation interview.
-- Read `references/customisation-interview.md` only when the user asks to
-  customise the skill, establish a reusable voice profile, or complete it.
-- Read `references/avoid.md` for a full anti-slop audit or a heavy rewrite.
-- Read `references/revision-examples.md` when judging whether a proposed edit
-  preserves meaning while becoming more direct.
+- `references/avoid.md` for a full anti-slop audit or a heavy rewrite.
+- `references/revision-examples.md` when judging whether an edit preserves
+  meaning while becoming more direct.
+- `references/customisation-interview.md` only when the user asks to build a
+  reusable voice profile.
+- `references/author-profile-template.md` when filling that profile in.

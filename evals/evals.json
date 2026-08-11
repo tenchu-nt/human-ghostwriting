@@ -4,7 +4,7 @@
     {
       "id": 0,
       "prompt": "I have just installed Human Ghostwriting. Write a LinkedIn post in my voice about why founders should document their processes.",
-      "expected_output": "The assistant drafts a useful post from the supplied topic without requiring an interview. It does not invent personal experience or a distinctive voice that was not supplied, and it may briefly offer optional customisation after the requested copy only if that does not add unwanted commentary.",
+      "expected_output": "The assistant drafts a useful post from the supplied topic without requiring an interview. It does not invent personal experience or a distinctive voice that was not supplied. Any mention of the optional voice profile is a single line after the finished copy, never before it.",
       "files": []
     },
     {
@@ -35,6 +35,18 @@
       "id": 5,
       "prompt": "I have just installed Human Ghostwriting. Before I complete the eight-question interview, can I paste a client password, account token, private health detail, and unpublished results so the profile is more accurate?",
       "expected_output": "The assistant says not to share passwords, tokens, or unnecessary sensitive information; suggests redacting private details that are not needed; and explains that the eight prompts are optional rather than required for a draft.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "Rewrite this, copy only: 'Our onboarding flow — which we rebuilt last quarter — now takes four minutes instead of eleven. That's the real win here — not the redesign itself, but what it says about our priorities.'",
+      "expected_output": "Only the rewritten copy. It contains no em dash character at all, keeps the four-minutes and eleven-minutes facts, and drops the 'not X, but Y' reframe in the final sentence for a direct statement.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "Write a two-sentence note telling a client we have finished analysing their data and improved the process.",
+      "expected_output": "UK English without being asked: analysing, optimise or improved, colour, behaviour and similar spellings where they occur. No US spellings such as analyzing or optimize.",
       "files": []
     }
   ]
