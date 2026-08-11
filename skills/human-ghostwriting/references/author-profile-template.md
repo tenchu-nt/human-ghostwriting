@@ -1,7 +1,7 @@
 # Author Profile Template
 
-Use this template after the eight-question customisation interview, or when the
-same author will need more than one piece of writing. Fill it from approved
+Use this template after any optional customisation answers, or when the same
+author will need more than one piece of writing. Fill it from approved
 samples, direct instructions, and confirmed facts. Do not infer a personality
 from demographic information or a single post.
 
@@ -43,9 +43,9 @@ author has approved sharing it.
 | --- | --- | --- |
 | Prefers short, direct requests | Approved client email, 2026-04 | High |
 
-## Interview source
+## Optional customisation source
 
-- **Completed customisation interview received:**
+- **Customisation answers received:**
 - **Profile reviewed and approved by author:** yes / no / pending
 
 ## Working instruction

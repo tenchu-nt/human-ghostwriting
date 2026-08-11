@@ -22,11 +22,12 @@ npx skills add tenchu-nt/human-ghostwriting --skill human-ghostwriting --agent c
 The installer supports other compatible agents too. See its prompts for the
 available targets.
 
-## First step after installation
+## Use it immediately; customise only if helpful
 
-Complete the [eight-question customisation interview](skills/human-ghostwriting/references/customisation-interview.md), then paste or upload the completed
-answers with your first personalised writing request. The skill turns those
-answers into an author profile before it ghostwrites under your name.
+Write with the context already in your request. The optional
+[eight-question customisation guide](skills/human-ghostwriting/references/customisation-interview.md)
+is for people who want a reusable author profile or more consistent voice
+across future work; answer any number of prompts, or skip it entirely.
 
 For ChatGPT, paste [CHATGPT-INSTRUCTIONS.md](skills/human-ghostwriting/CHATGPT-INSTRUCTIONS.md) into a custom GPT or project instruction, then upload the
 four files in `skills/human-ghostwriting/references/` as knowledge.
@@ -35,8 +36,8 @@ four files in `skills/human-ghostwriting/references/` as knowledge.
 
 - `skills/human-ghostwriting/SKILL.md`: the portable Claude Code and Codex
   skill.
-- `references/customisation-interview.md`: the first-run eight-question
-  profile intake.
+- `references/customisation-interview.md`: an optional eight-prompt guide for
+  building a reusable profile.
 - `references/author-profile-template.md`: the resulting reusable author
   profile.
 - `references/avoid.md`: words, phrases, and writing patterns to review.

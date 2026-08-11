@@ -9,7 +9,7 @@ description: >
   says "write this better" or "remove the AI slop". Do not use it for legal,
   academic, or regulated text where a prescribed formal style is required.
 metadata:
-  version: 1.7.0
+  version: 1.8.0
   category: writing-and-editing
   compatibility: Claude Code, Codex, and any agent that can load Markdown files
 ---
@@ -28,29 +28,25 @@ sentence could be sent by any company, in any country, about any product. Fix
 the underlying vagueness. Do not merely swap fashionable words for plainer
 ones.
 
-## First use: customisation interview
+## Optional customisation interview
 
-Before producing personalised ghostwriting for a new author, ask them to
-complete `references/customisation-interview.md` and paste or upload their
-eight answers. Ask no extra discovery questions in the same turn unless a
-safety, legal, or factual issue requires one.
+Do not make an interview a gate to writing. Draft from the request, supplied
+facts, and any samples already available. If essential information is missing,
+ask only the one or two questions that materially affect truth, audience, or
+the requested action; otherwise make the best restrained draft you can.
 
-All eight answers are required. Do not offer a partial-interview shortcut,
-ask for a ninth context item, offer a draft "in the meantime", or turn the
-first-use response into a writing consultation. "Not sure" is a complete
-answer for any question. The purpose is to establish a reliable profile before
-the first personalised draft, not to extract perfect information.
+Offer `references/customisation-interview.md` only when the user wants a
+reusable author profile, steadier voice across multiple pieces, or help
+articulating their preferences. It has eight optional prompts, but the user
+may answer any number of them, say "not sure", or skip it entirely. Never
+delay a requested draft while waiting for the interview.
 
-Treat the completed interview as the starting author brief. Convert it into a
-working profile using `references/author-profile-template.md`, then use that
-profile for later requests. Do not fill gaps by inventing personality traits.
-When the user asks for the author profile only, return only that profile. Put
+When answers are provided, use them to build or update
+`references/author-profile-template.md`. Treat the result as evidence, not a
+complete identity, and do not fill gaps by inventing personality traits. When
+the user asks for the author profile only, return only that profile. Put
 unknowns inside it as "Not stated" or "Pending", rather than appending a
 commentary, recommendation, question, or offer.
-
-This intake is required for writing that will be sent under a person's name.
-It is not required for a generic, educational example that does not claim to
-match a particular author.
 
 ## Core rules
 
@@ -227,8 +223,8 @@ Before sending, ask:
 
 - Read `references/author-profile-template.md` when the author needs a
   repeatable voice profile or after they complete the customisation interview.
-- Read `references/customisation-interview.md` on the first personalised
-  ghostwriting request for a new author.
+- Read `references/customisation-interview.md` only when the user asks to
+  customise the skill, establish a reusable voice profile, or complete it.
 - Read `references/avoid.md` for a full anti-slop audit or a heavy rewrite.
 - Read `references/revision-examples.md` when judging whether a proposed edit
   preserves meaning while becoming more direct.

@@ -1,13 +1,13 @@
 # Human Ghostwriting: Eight-Question Customisation Interview
 
-Complete this before the skill writes under your name. Short answers are fine.
-Use "not sure" where you do not have a preference. Do not share private client
-information, passwords, unpublished financial information, or anything you do
-not want an AI to process.
+Use this optional guide when you want a reusable author profile or more
+consistent voice across future work. You can answer any number of prompts;
+short answers and "not sure" are fine. Do not share private client information,
+passwords, unpublished financial information, or anything you do not want an
+AI to process.
 
-After answering, paste or upload this completed file with your first request.
-The skill will turn the answers into an author profile and use it as the source
-of truth for future drafts.
+If you answer any prompts, paste or upload them with a request. The skill can
+turn them into an author profile and use it as evidence for future drafts.
 
 ## 1. Who is writing, and who are they writing to?
 

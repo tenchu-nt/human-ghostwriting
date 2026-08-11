@@ -59,27 +59,25 @@ conversation.
 ## Optional evaluation prompts
 
 `evals/evals.json` contains six realistic prompts for checking a new
-installation: the first-run intake, an email rewrite, a founder post, an
-audit, profile-only output, and privacy-safe onboarding. Review the output for
-truthfulness, voice fit, concrete detail, privacy, and whether it avoids
-replacing one formula with another.
+installation: an immediate first-use draft, an email rewrite, a founder post,
+an audit, profile-only output, and privacy-safe optional onboarding. Review
+the output for truthfulness, voice fit, concrete detail, privacy, and whether
+it avoids replacing one formula with another.
 
-## First use: customise the skill
+## Optional customisation
 
-1. Complete [the eight-question interview](references/customisation-interview.md).
-2. Paste or upload the answers with your first personalised writing request.
-3. Review the resulting author profile before using it for important writing.
-
-The interview is deliberately mandatory for personalised ghostwriting. It
-prevents the skill from guessing at a voice or inventing personal texture from
-too little context. It is not needed for generic examples.
+Write immediately with the context you have. For a reusable author profile or
+more consistent voice across future work, optionally complete any or all of
+[the eight customisation prompts](references/customisation-interview.md), then
+ask the skill to build an author profile. It will not delay a draft while
+waiting for answers.
 
 ## First-use prompt
 
 ```text
 Use the Human Ghostwriting skill. Draft [format] for [reader].
 
-I have attached my completed eight-question customisation interview.
+Optional author profile or voice notes: [attach if available]
 
 Author: [role and relationship to the reader]
 Voice: [direct/formal/warm/dry, plus 2-3 approved samples or traits]
